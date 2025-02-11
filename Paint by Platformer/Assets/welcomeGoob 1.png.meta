@@ -1,0 +1,520 @@
+fileFormatVersion: 2
+guid: d46204e5884051246af8b5ba6f5bc882
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7451949732349959016
+    second: welcomeGoob_0
+  - first:
+      213: -5899967951570426473
+    second: welcomeGoob_1
+  - first:
+      213: -5699500709551618241
+    second: welcomeGoob_2
+  - first:
+      213: 2539717764341628514
+    second: welcomeGoob_3
+  - first:
+      213: 1686408857703488347
+    second: welcomeGoob_4
+  - first:
+      213: -4160572241689278609
+    second: welcomeGoob_5
+  - first:
+      213: 3925174171350401483
+    second: welcomeGoob_6
+  - first:
+      213: -916197637276164047
+    second: welcomeGoob_7
+  - first:
+      213: 5875639388533409773
+    second: welcomeGoob_8
+  - first:
+      213: 8445045462508540012
+    second: welcomeGoob_9
+  - first:
+      213: 4944681486468227201
+    second: welcomeGoob_10
+  - first:
+      213: 7902346164783329541
+    second: welcomeGoob_11
+  - first:
+      213: -588128822187201624
+    second: welcomeGoob_12
+  - first:
+      213: 2099918238545303430
+    second: welcomeGoob_13
+  - first:
+      213: 9097614330496926125
+    second: welcomeGoob_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: welcomeGoob_0
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 545
+        width: 876
+        height: 1223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86b59c8acc4aa6760800000000000000
+      internalID: 7451949732349959016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: welcomeGoob_1
+      rect:
+        serializedVersion: 2
+        x: 1158
+        y: 1762
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 795a47c486a1f1ea0800000000000000
+      internalID: -5899967951570426473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: welcomeGoob_2
+      rect:
+        serializedVersion: 2
+        x: 1132
+        y: 1717
+        width: 12
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f37c61a4d4e47e0b0800000000000000
+      internalID: -5699500709551618241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: welcomeGoob_3
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 253
+        width: 419
+        height: 309
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26ef455c9d3ee3320800000000000000
+      internalID: 2539717764341628514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: welcomeGoob_4
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 232
+        width: 129
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5b1d7dcbe3576710800000000000000
+      internalID: 1686408857703488347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: welcomeGoob_5
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 215
+        width: 77
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6782cff69da246c0800000000000000
+      internalID: -4160572241689278609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: welcomeGoob_6
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 247
+        width: 130
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc101e4cc15097630800000000000000
+      internalID: 3925174171350401483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: welcomeGoob_7
+      rect:
+        serializedVersion: 2
+        x: 927
+        y: 261
+        width: 170
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1302a166a130943f0800000000000000
+      internalID: -916197637276164047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: welcomeGoob_8
+      rect:
+        serializedVersion: 2
+        x: 1165
+        y: 238
+        width: 267
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de7c3d5b4e67a8150800000000000000
+      internalID: 5875639388533409773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: welcomeGoob_9
+      rect:
+        serializedVersion: 2
+        x: 1483
+        y: 200
+        width: 191
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6098d8ba14d23570800000000000000
+      internalID: 8445045462508540012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: welcomeGoob_10
+      rect:
+        serializedVersion: 2
+        x: 1699
+        y: 272
+        width: 48
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 180a3682d990f9440800000000000000
+      internalID: 4944681486468227201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: welcomeGoob_11
+      rect:
+        serializedVersion: 2
+        x: 1802
+        y: 246
+        width: 65
+        height: 266
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 501b41ce7f5caad60800000000000000
+      internalID: 7902346164783329541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: welcomeGoob_12
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 86
+        width: 1724
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8abec57c3fb86d7f0800000000000000
+      internalID: -588128822187201624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: welcomeGoob_13
+      rect:
+        serializedVersion: 2
+        x: 1712
+        y: 179
+        width: 56
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6875bd91388642d10800000000000000
+      internalID: 2099918238545303430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: welcomeGoob_14
+      rect:
+        serializedVersion: 2
+        x: 1798
+        y: 188
+        width: 44
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da1c5c84808314e70800000000000000
+      internalID: 9097614330496926125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      welcomeGoob_0: 7451949732349959016
+      welcomeGoob_1: -5899967951570426473
+      welcomeGoob_10: 4944681486468227201
+      welcomeGoob_11: 7902346164783329541
+      welcomeGoob_12: -588128822187201624
+      welcomeGoob_13: 2099918238545303430
+      welcomeGoob_14: 9097614330496926125
+      welcomeGoob_2: -5699500709551618241
+      welcomeGoob_3: 2539717764341628514
+      welcomeGoob_4: 1686408857703488347
+      welcomeGoob_5: -4160572241689278609
+      welcomeGoob_6: 3925174171350401483
+      welcomeGoob_7: -916197637276164047
+      welcomeGoob_8: 5875639388533409773
+      welcomeGoob_9: 8445045462508540012
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
