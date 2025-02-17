@@ -20,9 +20,44 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask Ground;
 
+    //0 is red, 1 is yellow, 2 is blue (rainbow order)
+    public string[] colors = { "red", "blue", "yellow" };
+    public int currentColor = 0;
+
 
     private void Update()
     {
+        if(Gamepad.current.rightShoulder.wasPressedThisFrame)
+        {
+            if(currentColor == 2)
+            {
+                currentColor = 0;
+                Debug.Log(colors[currentColor]);
+            }
+            else
+            {
+                currentColor++;
+                Debug.Log(colors[currentColor]);
+            }
+        }
+        if(Gamepad.current.leftShoulder.wasPressedThisFrame)
+        {
+            if(currentColor == 0)
+            {
+                currentColor = 2;
+            }
+            else
+            {
+                currentColor--;
+            }
+        }
+
+
+
+
+
+
+
         if (isDashing)
         {
             return;
@@ -89,4 +124,10 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
     }
+
+    public int getColor()
+    {
+        return currentColor;
+    }
 }
+
