@@ -5,7 +5,9 @@ using UnityEngine.InputSystem;
 //script adapted from bendux
 public class PlayerMovement : MonoBehaviour
 {
+    public Animator animator;
     private float horizontal;
+    private float vertical;
     private float speed = 6f;
     private float jumpingPower = 12f;
     private bool isFacingRight = true;
@@ -29,9 +31,34 @@ public class PlayerMovement : MonoBehaviour
         }
 
         horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = rb.linearVelocity.y;
+
+        // Animation If statemetns
+        if (horizontal != 0 && IsGrounded()){ //Plays walk animation if player is moving on the ground
+            animator.SetFloat("Speed", 1);
+            animator.SetBool("Grounded", true);
+        }
+        else if(horizontal == 0 && vertical == 0){ //Turns off walk animation if player is idle
+            animator.SetFloat("Speed", 0);
+            animator.SetBool("Grounded", true);
+        }
+
+        if (vertical > 0.01f && !IsGrounded()){ //Plays jump animation if player is moving upwards
+            animator.SetFloat("Vertical", 1);
+            animator.SetBool("Grounded", false);
+        }
+        else if(vertical < -0.01f && !IsGrounded()) { //Plays fall animation if player is moving downwards
+            animator.SetFloat("Vertical", -1);
+            animator.SetBool("Grounded", false);
+        }
+        else if(IsGrounded()){ //Turns off jump animation if player isn't moving vertically
+            animator.SetFloat("Vertical", 0);
+            animator.SetBool("Grounded", true);
+        }
 
         if (Gamepad.current.aButton.wasPressedThisFrame && IsGrounded())
         {
+            animator.SetFloat("Vertical", 1);
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpingPower);
         }
 
@@ -54,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
         {
             return;
         }
-
+    
         rb.linearVelocity = new Vector2(horizontal * speed, rb.linearVelocity.y);
     }
 
