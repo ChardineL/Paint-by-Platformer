@@ -492,7 +492,7 @@
                     "name": "Submit",
                     "type": "Button",
                     "id": "7607c7b6-cd76-4816-beef-bd0341cfe950",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -501,7 +501,7 @@
                     "name": "Cancel",
                     "type": "Button",
                     "id": "15cef263-9014-4fd5-94d9-4e4a6234a6ef",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -523,6 +523,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "TrackedDevicePosition",
+                    "type": "PassThrough",
+                    "id": "24908448-c609-4bc3-a128-ea258674378a",
+                    "expectedControlType": "Vector3",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "RightClick",
@@ -552,19 +561,19 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "TrackedDevicePosition",
+                    "name": "TrackedDeviceOrientation",
                     "type": "PassThrough",
-                    "id": "24908448-c609-4bc3-a128-ea258674378a",
-                    "expectedControlType": "Vector3",
+                    "id": "9caa3d8a-6b2f-4e8e-8bad-6ede561bd9be",
+                    "expectedControlType": "Quaternion",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "TrackedDeviceOrientation",
-                    "type": "PassThrough",
-                    "id": "9caa3d8a-6b2f-4e8e-8bad-6ede561bd9be",
-                    "expectedControlType": "Quaternion",
+                    "name": "Escape",
+                    "type": "Button",
+                    "id": "05549b62-0431-4c44-87a3-17a2a6ea7eda",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -986,6 +995,28 @@
                     "processors": "",
                     "groups": "XR",
                     "action": "TrackedDeviceOrientation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "35425321-2150-4ba9-ae35-9207bf3f80a6",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "Escape",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a67af319-a330-44a4-9631-088b84860301",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Escape",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -23,29 +23,34 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (isDashing)
+        if (!PauseMenu.isPaused)
         {
-            return;
+        // Character movement code here
+            if (isDashing)
+            {
+                return;
+            }
+
+            horizontal = Input.GetAxisRaw("Horizontal");
+
+            if (Gamepad.current.aButton.wasPressedThisFrame && IsGrounded())
+            {
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpingPower);
+            }
+
+            if (Gamepad.current.aButton.wasPressedThisFrame && rb.linearVelocity.y > 0f)
+            {
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.5f);
+            }
+
+            if (Gamepad.current.rightTrigger.wasPressedThisFrame && canDash)
+            {
+                StartCoroutine(Dash());
+            }
+
+            Flip();
         }
-
-        horizontal = Input.GetAxisRaw("Horizontal");
-
-        if (Gamepad.current.aButton.wasPressedThisFrame && IsGrounded())
-        {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpingPower);
-        }
-
-        if (Gamepad.current.aButton.wasPressedThisFrame && rb.linearVelocity.y > 0f)
-        {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.5f);
-        }
-
-        if (Gamepad.current.rightTrigger.wasPressedThisFrame && canDash)
-        {
-            StartCoroutine(Dash());
-        }
-
-        Flip();
+        
     }
 
     private void FixedUpdate()
