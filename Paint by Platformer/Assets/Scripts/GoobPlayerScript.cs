@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+<<<<<<< Updated upstream
         if (!PauseMenu.isPaused)
         {
         // Character movement code here
@@ -51,6 +52,70 @@ public class PlayerMovement : MonoBehaviour
             Flip();
         }
         
+=======
+        if (Gamepad.current != null)
+    {
+        foreach (var control in Gamepad.current.allControls)
+        {
+            if (control.IsPressed())
+            {
+                Debug.Log($"Button Pressed: {control.name}");
+            }
+        }
+    }
+        horizontal = Input.GetAxisRaw("Horizontal");
+            float vertical = rb.linearVelocity.y;
+
+            // Animation If statemetns
+            if (horizontal != 0 && IsGrounded()){ //Plays walk animation if player is moving on the ground
+                animator.SetFloat("Speed", 1);
+                animator.SetBool("Grounded", true);
+            }
+            else if(horizontal == 0 && vertical == 0){ //Turns off walk animation if player is idle
+                animator.SetFloat("Speed", 0);
+                animator.SetBool("Grounded", true);
+            }
+
+            if (vertical > 0.01f && !IsGrounded()){ //Plays jump animation if player is moving upwards
+                animator.SetFloat("Vertical", 1);
+                animator.SetBool("Grounded", false);
+            }
+            else if(vertical < -0.01f && !IsGrounded()) { //Plays fall animation if player is moving downwards
+                animator.SetFloat("Vertical", -1);
+                animator.SetBool("Grounded", false);
+            }
+            else if(IsGrounded()){ //Turns off jump animation if player isn't moving vertically
+                animator.SetFloat("Vertical", 0);
+                animator.SetBool("Grounded", true);
+            }
+
+        if(!PauseMenu.isPaused)
+        {
+            if (isDashing)
+            {
+                return;
+            }
+
+            
+            if (Gamepad.current.aButton.wasPressedThisFrame && IsGrounded())
+            {
+                animator.SetFloat("Vertical", 1);
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpingPower);
+            }
+
+            if (Gamepad.current.aButton.wasPressedThisFrame && rb.linearVelocity.y > 0f)
+            {
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.5f);
+            }
+
+            if (Gamepad.current.rightTrigger.wasPressedThisFrame && canDash)
+            {
+                StartCoroutine(Dash());
+            }
+
+            Flip();
+        }
+>>>>>>> Stashed changes
     }
 
     private void FixedUpdate()
