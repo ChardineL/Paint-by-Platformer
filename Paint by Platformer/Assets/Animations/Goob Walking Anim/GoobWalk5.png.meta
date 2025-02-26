@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      GoobWalk5_0: -6462638965755899121
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
