@@ -22,7 +22,12 @@ public class PlayerMovement : MonoBehaviour
 
     //0 is red, 1 is yellow, 2 is blue (rainbow order)
     public string[] colors = { "red", "blue", "yellow" };
-    public int currentColor = 0;
+    public int currentColor;
+
+    private void Start()
+    {
+        currentColor = 0;
+    }
 
 
     private void Update()
