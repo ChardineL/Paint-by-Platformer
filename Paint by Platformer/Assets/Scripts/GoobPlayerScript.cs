@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isFacingRight = true;
 
     private bool canDash = true;
+    private bool isDead = false;
     private bool isDashing;
     private float dashingPower = 200f;
     private float dashingTime = 0.2f;
@@ -22,12 +23,33 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask Ground;
 
+    private float checkpointX;
+    private float checkpointY;
+
+    private void Start()
+    {
+        checkpointX = this.transform.position.x;
+        checkpointY = this.transform.position.y;
+        isDead = true;
+    }
+
 
     private void Update()
     {
+        if (isDead)
+        {
+            transform.position = new Vector3 (checkpointX, checkpointY, 0);
+            isDead = false;
+        }
         if (isDashing)
         {
             return;
+        }
+
+        //checking if he's fallen too far from checkpoint (dead)
+        if(this.transform.position.y < checkpointY - 100)
+        {
+            isDead = true;
         }
 
         horizontal = Input.GetAxisRaw("Horizontal");
