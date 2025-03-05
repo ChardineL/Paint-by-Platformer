@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 //script adapted from bendux
 public class PlayerMovement : MonoBehaviour
@@ -78,15 +79,16 @@ public class PlayerMovement : MonoBehaviour
         }
         if(Input.anyKeyDown){
             Debug.Log(Input.GetKeyDown(KeyCode.Space));
+            Debug.Log("grounded: "+IsGrounded());
         }
-        if ((Input.GetKeyDown(KeyCode.Space) || Gamepad.current.aButton.wasPressedThisFrame)
+        if ((Input.GetKeyDown(KeyCode.Space) || (Gamepad.current!=null && Gamepad.current.aButton.wasPressedThisFrame))
          && IsGrounded())
         {
             animator.SetFloat("Vertical", 1);
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpingPower);
         }
 
-        if ((Input.GetKeyDown(KeyCode.Space) || Gamepad.current.aButton.wasPressedThisFrame ) && rb.linearVelocity.y > 0f)
+        if ((Input.GetKeyDown(KeyCode.Space) || (Gamepad.current!=null && Gamepad.current.aButton.wasPressedThisFrame) ) && rb.linearVelocity.y > 0f)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.5f);
         }
