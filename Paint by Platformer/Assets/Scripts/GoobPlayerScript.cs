@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 //script adapted from bendux
 public class PlayerMovement : MonoBehaviour
@@ -25,11 +26,10 @@ public class PlayerMovement : MonoBehaviour
 
     private float checkpointX;
     private float checkpointY;
-
+    Vector2 checkpointpos;
     private void Start()
     {
-        checkpointX = this.transform.position.x;
-        checkpointY = this.transform.position.y;
+        checkpointpos = this.transform.position;
         isDead = true;
     }
 
@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isDead)
         {
-            transform.position = new Vector3 (checkpointX, checkpointY, 0);
+            transform.position = checkpointpos;
             isDead = false;
         }
         if (isDashing)
@@ -77,14 +77,18 @@ public class PlayerMovement : MonoBehaviour
             animator.SetFloat("Vertical", 0);
             animator.SetBool("Grounded", true);
         }
-
-        if (Gamepad.current.aButton.wasPressedThisFrame && IsGrounded())
+        if(Input.anyKeyDown){
+            Debug.Log(Input.GetKeyDown(KeyCode.Space));
+            Debug.Log("grounded: "+IsGrounded());
+        }
+        if ((Input.GetKeyDown(KeyCode.Space) || (Gamepad.current!=null && Gamepad.current.aButton.wasPressedThisFrame))
+         && IsGrounded())
         {
             animator.SetFloat("Vertical", 1);
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpingPower);
         }
 
-        if (Gamepad.current.aButton.wasPressedThisFrame && rb.linearVelocity.y > 0f)
+        if ((Input.GetKeyDown(KeyCode.Space) || (Gamepad.current!=null && Gamepad.current.aButton.wasPressedThisFrame) ) && rb.linearVelocity.y > 0f)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.5f);
         }
@@ -111,7 +115,17 @@ public class PlayerMovement : MonoBehaviour
     {
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, Ground);
     }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log(collision.gameObject.CompareTag("Spikes"));
+        if(collision.gameObject.CompareTag("Spikes")){
+            
+            isDead=true;
+        }
+        
+    }
 
+    
     private void Flip()
     {
         if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
@@ -122,7 +136,6 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = localScale;
         }
     }
-
     private IEnumerator Dash()
     {
         canDash = false;
