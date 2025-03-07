@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     private float vertical;
     private float speed = 6f;
     private float jumpingPower = 12f;
+    public float fallMultiplier = 2.5f; 
+    public float lowJumpMultiplier = 2f;
     private bool isFacingRight = true;
 
     private bool canDash = true;
@@ -96,6 +98,19 @@ public class PlayerMovement : MonoBehaviour
         if (Gamepad.current.rightTrigger.wasPressedThisFrame && canDash)
         {
             StartCoroutine(Dash());
+        }
+        //gravity when falling
+        if (rb.linearVelocityY < 0) 
+        {
+            rb.gravityScale = fallMultiplier; // Increase gravity when falling
+        } 
+        else if (rb.linearVelocityY > 0 && !(Input.GetKey(KeyCode.Space)|| (Gamepad.current != null && Gamepad.current.aButton.isPressed))) 
+        {
+            rb.gravityScale = lowJumpMultiplier; // Reduce jump height if key is released
+        }
+        else 
+        {
+            rb.gravityScale = 1f; // Default gravity when grounded
         }
 
         Flip();
