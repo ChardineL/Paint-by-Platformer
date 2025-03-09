@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/feb7.unity
     guid: 73ee676c785dffc4588129da1e059bb0
+  - enabled: 1
+    path: Assets/Scenes/TownOne.unity
+    guid: 66085f5764cba4f2d86188b730ff9184
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
