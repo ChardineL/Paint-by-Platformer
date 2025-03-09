@@ -2,16 +2,16 @@ using UnityEngine;
 
 public class NPCSpeechBubble : MonoBehaviour
 {
-    public GameObject speechBubble; // Assign in Inspector
+    public GameObject speechBubble;
 
     void Start()
     {
         speechBubble.SetActive(false); // Hide speech bubble initially
     }
 
-    void OnTriggerEnter2D(Collider2D other) // Use OnTriggerEnter for 3D
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player")) // Make sure your player has the tag "Player"
+        if (other.CompareTag("Player"))
         {
             speechBubble.SetActive(true); // Show speech bubble
         }
