@@ -3,7 +3,6 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 
-//script adapted from bendux
 public class PlayerMovement : MonoBehaviour
 {
     public Animator animator;
@@ -22,6 +21,9 @@ public class PlayerMovement : MonoBehaviour
     private float dashingTime = 0.2f;
     private float dashingCooldown = 1f;
 
+    public int numDeaths;
+    public float timeInLevel;
+
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask Ground;
@@ -33,14 +35,20 @@ public class PlayerMovement : MonoBehaviour
     {
         checkpointpos = this.transform.position;
         isDead = true;
+        numDeaths = -1;
+        timeInLevel = 0;
     }
+
 
 
     private void Update()
     {
+        DeathManager.AddTime(Time.deltaTime);
         if (isDead)
         {
             transform.position = checkpointpos;
+            numDeaths++;
+            DeathManager.AddDeath();
             isDead = false;
         }
         if (isDashing)
@@ -86,6 +94,8 @@ public class PlayerMovement : MonoBehaviour
         if ((Input.GetKeyDown(KeyCode.Space) || (Gamepad.current!=null && Gamepad.current.aButton.wasPressedThisFrame))
          && IsGrounded())
         {
+            //Debug.Log(timeInLevel);
+            Debug.Log(DeathManager.getDeaths());
             animator.SetFloat("Vertical", 1);
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpingPower);
         }
