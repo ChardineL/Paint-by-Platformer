@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public float lowJumpMultiplier = 2f;
     private bool isFacingRight = true;
 
-    private bool canDash = true;
+    public bool canDash = false;
     private bool isDead = false;
     private bool isDashing;
     private float dashingPower = 200f;
