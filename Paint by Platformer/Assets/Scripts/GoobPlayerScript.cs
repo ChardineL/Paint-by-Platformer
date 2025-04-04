@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
     public bool canDash = false;
     private bool isDead = false;
+    public bool canDoubleJump = true; 
     private bool isDashing;
     private float dashingPower = 200f;
     private float dashingTime = 0.2f;
@@ -86,6 +87,7 @@ public class PlayerMovement : MonoBehaviour
         else if(IsGrounded()){ //Turns off jump animation if player isn't moving vertically
             animator.SetFloat("Vertical", 0);
             animator.SetBool("Grounded", true);
+            canDoubleJump = true;
         }
         if(Input.anyKeyDown){
             Debug.Log(Input.GetKeyDown(KeyCode.Space));
@@ -97,13 +99,21 @@ public class PlayerMovement : MonoBehaviour
             //Debug.Log(timeInLevel);
             Debug.Log(DeathManager.getDeaths());
             animator.SetFloat("Vertical", 1);
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpingPower);
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpingPower * 0.6f);
+        }
+        else if(((Input.GetKeyDown(KeyCode.Space) || Gamepad.current!=null && Gamepad.current.aButton.wasPressedThisFrame)) && canDoubleJump == true)
+        {
+            animator.SetFloat("Vertical", 1);
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpingPower * 0.6f);
+            canDoubleJump = false;
         }
 
+        /*
         if ((Input.GetKeyDown(KeyCode.Space) || (Gamepad.current!=null && Gamepad.current.aButton.wasPressedThisFrame) ) && rb.linearVelocity.y > 0f)
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.5f);
+            //rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.5f);
         }
+        */
 
         if (Gamepad.current.rightTrigger.wasPressedThisFrame && canDash)
         {

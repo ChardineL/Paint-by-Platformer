@@ -1808,7 +1808,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 8e0c09d743e7c5149b6cc99f53615e1b, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -16303,7 +16303,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a77cf91a3e23d1479270e17eae19640, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deaths: 0
 --- !u!1 &1126066943
 GameObject:
   m_ObjectHideFlags: 0
@@ -16881,7 +16880,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a77cf91a3e23d1479270e17eae19640, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deaths: -1
 --- !u!4 &1326694790
 Transform:
   m_ObjectHideFlags: 0
@@ -17280,6 +17278,10 @@ PrefabInstance:
     - target: {fileID: 3831962834180329889, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}
       propertyPath: m_Name
       value: Goob_0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4243714345622679826, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}
+      propertyPath: m_AngularDamping
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5132522283704621209, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}
       propertyPath: m_LocalScale.x
