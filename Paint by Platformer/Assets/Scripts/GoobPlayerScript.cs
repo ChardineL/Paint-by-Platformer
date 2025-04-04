@@ -152,8 +152,8 @@ public class PlayerMovement : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log(collision.gameObject.CompareTag("Spikes"));
-        if(collision.gameObject.CompareTag("Spikes")){
+        //Debug.Log(collision.gameObject.CompareTag("Spikes"));
+        if(collision.gameObject.CompareTag("Spikes") || collision.gameObject.CompareTag("Enemy")){
             
             isDead=true;
         }
