@@ -5,7 +5,7 @@ public class Follow_player : MonoBehaviour
 {
     public Transform player;
     public Vector3 vec;
-    public GameObject end;
+    //public GameObject end;
 
 
     // Update is called once per frame
