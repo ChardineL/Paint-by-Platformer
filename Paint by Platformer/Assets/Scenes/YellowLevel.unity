@@ -902,7 +902,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 8659179}
   vec: {x: 0, y: 0, z: -5}
-  end: {fileID: 0}
 --- !u!114 &281585934
 MonoBehaviour:
   m_ObjectHideFlags: 0
