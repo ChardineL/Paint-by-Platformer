@@ -8,10 +8,11 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
     private float horizontal;
     private float vertical;
-    private float speed = 6f;
-    public float jumpingPower = 15f; //12f;
-    public float fallMultiplier = 2.5f; 
-    public float lowJumpMultiplier = 2f;
+    public float speed = 6f;
+    public float jumpingPower = 25f; //12f;
+    public float fallMultiplier=4f; 
+    public float lowJumpMultiplier=4f;
+    public float gravityscale=3f;
     private bool isFacingRight = true;
 
     public bool canDash = false;
@@ -22,8 +23,15 @@ public class PlayerMovement : MonoBehaviour
     private float dashingTime = 0.2f;
     private float dashingCooldown = 1f;
 
+    [SerializeField] public ProjectileBehavior ProjectilePrefab;
+    [SerializeField] public Transform LaunchOffset;
+
     public int numDeaths;
     public float timeInLevel;
+    public int[] colors = { 0, 1, 2 };
+    //red, yellow, blue
+    int currentColor = 0;
+    int previousColor = 2;
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
@@ -38,6 +46,11 @@ public class PlayerMovement : MonoBehaviour
         isDead = true;
         numDeaths = -1;
         timeInLevel = 0;
+    }
+
+    public bool FacingRight()
+    {
+        return isFacingRight;
     }
 
 
@@ -124,13 +137,33 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.gravityScale = fallMultiplier; // Increase gravity when falling
         } 
-        else if (rb.linearVelocityY > 0 && !(Input.GetKey(KeyCode.Space)|| (Gamepad.current != null && Gamepad.current.aButton.isPressed))) 
+        else if (rb.linearVelocityY > 0 && (Input.GetKey(KeyCode.Space)|| (Gamepad.current != null && Gamepad.current.aButton.isPressed))) 
         {
+            //rb.linearVelocityY=0;
             rb.gravityScale = lowJumpMultiplier; // Reduce jump height if key is released
         }
         else 
         {
-            rb.gravityScale = 1f; // Default gravity when grounded
+            rb.gravityScale =gravityscale; //2f; // Default gravity when grounded
+        }
+
+        if(Gamepad.current.xButton.wasPressedThisFrame)
+        {
+            Instantiate(ProjectilePrefab, LaunchOffset.position, transform.rotation);
+        }
+        if(Gamepad.current.rightShoulder.wasPressedThisFrame)
+        {
+            previousColor = currentColor;
+            if (currentColor == 0) currentColor = 1;
+            else if (currentColor == 1) currentColor = 2;
+            else if (currentColor == 2) currentColor = 0;
+        }
+        if (Gamepad.current.leftShoulder.wasPressedThisFrame)
+        {
+            previousColor = currentColor;
+            if (currentColor == 0) currentColor = 2;
+            else if (currentColor == 1) currentColor = 0;
+            else if (currentColor == 2) currentColor = 1;
         }
 
         Flip();
@@ -152,8 +185,8 @@ public class PlayerMovement : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log(collision.gameObject.CompareTag("Spikes"));
-        if(collision.gameObject.CompareTag("Spikes")){
+        //Debug.Log(collision.gameObject.CompareTag("Spikes"));
+        if(collision.gameObject.CompareTag("Spikes") || collision.gameObject.CompareTag("Enemy")){
             
             isDead=true;
         }
@@ -163,13 +196,17 @@ public class PlayerMovement : MonoBehaviour
     
     private void Flip()
     {
+        
         if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
         {
-            Vector3 localScale = transform.localScale;
+            //Vector3 localScale = transform.localScale;
             isFacingRight = !isFacingRight;
-            localScale.x *= -1f;
-            transform.localScale = localScale;
+            //localScale.x *= -1f;
+            //transform.localScale = localScale;
+            transform.Rotate(0f, 180f, 0f);
         }
+        
+        
     }
     private IEnumerator Dash()
     {

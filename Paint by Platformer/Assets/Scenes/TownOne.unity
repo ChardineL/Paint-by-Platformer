@@ -5333,7 +5333,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Back in my day life was colorful
+  m_text: 'Back in my day, life was colorful
 
     /'
   m_isRightToLeft: 0
@@ -12939,6 +12939,26 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1577232426460302854, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}
+      propertyPath: canDash
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1577232426460302854, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}
+      propertyPath: gravityscale
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1577232426460302854, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}
+      propertyPath: jumpingPower
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1577232426460302854, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}
+      propertyPath: fallMultiplier
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1577232426460302854, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}
+      propertyPath: lowJumpMultiplier
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1843240854818755486, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.6
@@ -12966,6 +12986,14 @@ PrefabInstance:
     - target: {fileID: 4243714345622679826, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}
       propertyPath: m_IncludeLayers.m_Bits
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5132522283704621209, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5132522283704621209, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 5132522283704621209, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}
       propertyPath: m_LocalPosition.x
