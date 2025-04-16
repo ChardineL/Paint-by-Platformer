@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isDead = false;
     public bool canDoubleJump = true; 
     private bool isDashing;
-    private float dashingPower = 200f;
+    private float dashingPower = 25f;
     private float dashingTime = 0.2f;
     private float dashingCooldown = 1f;
 
@@ -76,7 +76,15 @@ public class PlayerMovement : MonoBehaviour
             isDead = true;
         }
 
-        horizontal = Input.GetAxisRaw("Horizontal");
+        if (Gamepad.current != null)
+        {
+            horizontal = Gamepad.current.leftStick.x.ReadValue();
+        }
+        else
+        {
+            horizontal = Input.GetAxisRaw("Horizontal");
+        }
+
         float vertical = rb.linearVelocity.y;
 
         // Animation If statemetns
@@ -214,8 +222,18 @@ public class PlayerMovement : MonoBehaviour
         isDashing = true;
         float originalGravity = rb.gravityScale;
         rb.gravityScale = 0f;
-        rb.linearVelocity = new Vector2(transform.localScale.x * dashingPower, 0f);
-  
+        float dashDirection;
+        if (isFacingRight)
+        {
+            dashDirection = 1f;
+        }
+        else
+        {
+            dashDirection = -1f;
+        }
+
+        rb.linearVelocity = new Vector2(dashDirection * dashingPower, 0f);
+
         yield return new WaitForSeconds(dashingTime);
 
         rb.gravityScale = originalGravity;

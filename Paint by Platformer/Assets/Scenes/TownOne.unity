@@ -1887,6 +1887,7 @@ GameObject:
   - component: {fileID: 459323077}
   - component: {fileID: 459323079}
   - component: {fileID: 459323080}
+  - component: {fileID: 459323081}
   m_Layer: 0
   m_Name: bearded-idle-3
   m_TagString: Untagged
@@ -2024,6 +2025,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speechBubble: {fileID: 1040143643}
+--- !u!95 &459323081
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 459323076}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c47bd3f1a68ca4caca94bbbebf69ba0e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &464470125
 GameObject:
   m_ObjectHideFlags: 0
@@ -7592,6 +7615,7 @@ GameObject:
   - component: {fileID: 1224756138}
   - component: {fileID: 1224756141}
   - component: {fileID: 1224756140}
+  - component: {fileID: 1224756142}
   m_Layer: 0
   m_Name: woman-idle-1
   m_TagString: Untagged
@@ -7729,6 +7753,28 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.51515687, y: 0.46}
   m_EdgeRadius: 0
+--- !u!95 &1224756142
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1224756137}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a68971cf14dd442a7b5cad1dd1dd7544, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1242502456
 GameObject:
   m_ObjectHideFlags: 0
@@ -10596,6 +10642,7 @@ GameObject:
   - component: {fileID: 1744262160}
   - component: {fileID: 1744262162}
   - component: {fileID: 1744262163}
+  - component: {fileID: 1744262164}
   m_Layer: 0
   m_Name: hat-man-idle-1
   m_TagString: Untagged
@@ -10733,6 +10780,28 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.31727296, y: 0.52}
   m_EdgeRadius: 0
+--- !u!95 &1744262164
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1744262159}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d5d1fe1901a3543aa87a1aec6ca53a04, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1796573860
 GameObject:
   m_ObjectHideFlags: 0
@@ -11055,6 +11124,7 @@ GameObject:
   - component: {fileID: 1802184399}
   - component: {fileID: 1802184402}
   - component: {fileID: 1802184401}
+  - component: {fileID: 1802184403}
   m_Layer: 0
   m_Name: oldman-idle-1
   m_TagString: Untagged
@@ -11192,6 +11262,28 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.32002372, y: 0.42}
   m_EdgeRadius: 0
+--- !u!95 &1802184403
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1802184398}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ed075c23b9737412e84708c58e9c7cd4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1805735842
 GameObject:
   m_ObjectHideFlags: 0
@@ -11349,6 +11441,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1816270114}
   - component: {fileID: 1816270113}
+  - component: {fileID: 1816270115}
   m_Layer: 0
   m_Name: hat-man-idle-4
   m_TagString: Untagged
@@ -11426,6 +11519,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1816270115
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816270112}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d5d1fe1901a3543aa87a1aec6ca53a04, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1840141651
 GameObject:
   m_ObjectHideFlags: 0
