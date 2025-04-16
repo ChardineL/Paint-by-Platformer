@@ -11,6 +11,7 @@ public class getDash : MonoBehaviour
             PlayerMovement playerScript=player.GetComponent<PlayerMovement>();
             if(playerScript){
                 playerScript.canDash=true;
+                PlayerPrefs.SetInt("DashUnlocked", 1);
                 Destroy(gameObject);
             }
             

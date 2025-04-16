@@ -46,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
         isDead = true;
         numDeaths = -1;
         timeInLevel = 0;
+        canDash = PlayerPrefs.GetInt("DashUnlocked", 0) == 1;
     }
 
     public bool FacingRight()
