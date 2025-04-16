@@ -4512,7 +4512,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 206070211}
   vec: {x: 3.5, y: 2.75, z: -1}
-  end: {fileID: 195605409}
 --- !u!1 &871998124
 GameObject:
   m_ObjectHideFlags: 0
@@ -12940,6 +12939,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1577232426460302854, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}
+      propertyPath: jumpingPower
+      value: 24
+      objectReference: {fileID: 0}
     - target: {fileID: 1843240854818755486, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.6
@@ -12967,6 +12970,14 @@ PrefabInstance:
     - target: {fileID: 4243714345622679826, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}
       propertyPath: m_IncludeLayers.m_Bits
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5132522283704621209, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5132522283704621209, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 5132522283704621209, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}
       propertyPath: m_LocalPosition.x
