@@ -8,10 +8,11 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
     private float horizontal;
     private float vertical;
-    private float speed = 6f;
-    public float jumpingPower = 15f; //12f;
-    public float fallMultiplier = 2.5f; 
-    public float lowJumpMultiplier = 2f;
+    public float speed = 6f;
+    public float jumpingPower = 25f; //12f;
+    public float fallMultiplier=4f; 
+    public float lowJumpMultiplier=4f;
+    public float gravityscale=3f;
     private bool isFacingRight = true;
 
     public bool canDash = false;
@@ -136,13 +137,14 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.gravityScale = fallMultiplier; // Increase gravity when falling
         } 
-        else if (rb.linearVelocityY > 0 && !(Input.GetKey(KeyCode.Space)|| (Gamepad.current != null && Gamepad.current.aButton.isPressed))) 
+        else if (rb.linearVelocityY > 0 && (Input.GetKey(KeyCode.Space)|| (Gamepad.current != null && Gamepad.current.aButton.isPressed))) 
         {
+            //rb.linearVelocityY=0;
             rb.gravityScale = lowJumpMultiplier; // Reduce jump height if key is released
         }
         else 
         {
-            rb.gravityScale = 1f; // Default gravity when grounded
+            rb.gravityScale =gravityscale; //2f; // Default gravity when grounded
         }
 
         if(Gamepad.current.xButton.wasPressedThisFrame)

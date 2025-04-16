@@ -20009,16 +20009,32 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1577232426460302854, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}
+      propertyPath: speed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1577232426460302854, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}
+      propertyPath: canDash
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1577232426460302854, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}
+      propertyPath: gravityscale
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1577232426460302854, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}
       propertyPath: jumpingPower
-      value: 14
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1577232426460302854, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}
+      propertyPath: canDoubleJump
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1577232426460302854, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}
       propertyPath: fallMultiplier
-      value: 2.5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1577232426460302854, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}
       propertyPath: lowJumpMultiplier
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3170072525435020205, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}
       propertyPath: m_Enabled
@@ -20030,6 +20046,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3831962834180329889, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4243714345622679826, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}
+      propertyPath: m_GravityScale
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5132522283704621209, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}
@@ -20046,11 +20066,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5132522283704621209, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.52
+      value: -7.3
       objectReference: {fileID: 0}
     - target: {fileID: 5132522283704621209, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.66
+      value: -0.8
       objectReference: {fileID: 0}
     - target: {fileID: 5132522283704621209, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}
       propertyPath: m_LocalPosition.z
@@ -20467,7 +20487,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a77cf91a3e23d1479270e17eae19640, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deaths: -1
 --- !u!1 &2006601473
 GameObject:
   m_ObjectHideFlags: 0
