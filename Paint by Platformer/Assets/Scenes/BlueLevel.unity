@@ -224,10 +224,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baa31cdf17995e54795e38a10ff6e41b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialposx: 0
-  minDist: 0
-  maxDist: 25
-  movingSpeed: 7
 --- !u!212 &32357373
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3460,6 +3456,7 @@ GameObject:
   - component: {fileID: 781893567}
   - component: {fileID: 781893566}
   - component: {fileID: 781893565}
+  - component: {fileID: 781893570}
   m_Layer: 0
   m_Name: frog-idle-1 (1)
   m_TagString: Enemy
@@ -3552,10 +3549,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baa31cdf17995e54795e38a10ff6e41b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialposx: 0
-  minDist: 0
-  maxDist: 3
-  movingSpeed: 2
 --- !u!212 &781893568
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3626,6 +3619,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &781893570
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 781893564}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 965e0f314868db7459bd29b788b20463, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &811456702
 GameObject:
   m_ObjectHideFlags: 0
@@ -3731,10 +3746,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baa31cdf17995e54795e38a10ff6e41b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialposx: 0
-  minDist: 0
-  maxDist: 6
-  movingSpeed: 2
 --- !u!212 &811456706
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3997,10 +4008,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baa31cdf17995e54795e38a10ff6e41b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialposx: 0
-  minDist: 0
-  maxDist: 5
-  movingSpeed: 3
 --- !u!212 &836064242
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4454,6 +4461,7 @@ GameObject:
   - component: {fileID: 1231821647}
   - component: {fileID: 1231821650}
   - component: {fileID: 1231821651}
+  - component: {fileID: 1231821652}
   m_Layer: 0
   m_Name: eagle-attack-1
   m_TagString: Enemy
@@ -4620,6 +4628,28 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &1231821652
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231821646}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6f462620e81c7be4f9c392f019bc7c72, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1376109220
 GameObject:
   m_ObjectHideFlags: 0
@@ -4905,10 +4935,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baa31cdf17995e54795e38a10ff6e41b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialposx: 0
-  minDist: 0
-  maxDist: 6
-  movingSpeed: 3
 --- !u!212 &1381852686
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -63418,6 +63444,22 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 554336735988092780, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 9.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 554336735988092780, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 10.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 554336735988092780, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 9.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 554336735988092780, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 10.29
+      objectReference: {fileID: 0}
     - target: {fileID: 3170072525435020205, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}
       propertyPath: m_SortingOrder
       value: 1
@@ -63580,10 +63622,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baa31cdf17995e54795e38a10ff6e41b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialposx: 0
-  minDist: 0
-  maxDist: 6
-  movingSpeed: 1
 --- !u!212 &1766282384
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -64412,10 +64450,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baa31cdf17995e54795e38a10ff6e41b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialposx: 0
-  minDist: 0
-  maxDist: 7
-  movingSpeed: 3
 --- !u!212 &2004855322
 SpriteRenderer:
   m_ObjectHideFlags: 0

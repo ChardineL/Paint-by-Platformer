@@ -221,6 +221,7 @@ public class PlayerMovement : MonoBehaviour
     {
         canDash = false;
         isDashing = true;
+        animator.SetBool("Dash", true);
         float originalGravity = rb.gravityScale;
         rb.gravityScale = 0f;
         float dashDirection;
@@ -239,7 +240,9 @@ public class PlayerMovement : MonoBehaviour
 
         rb.gravityScale = originalGravity;
         isDashing = false;
+        animator.SetBool("Dash", false);
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
+        
     }
 }
