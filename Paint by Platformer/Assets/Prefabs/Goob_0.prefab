@@ -124,6 +124,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 534717551322018601}
+  speed: 6
+  jumpingPower: 25
+  fallMultiplier: 4
+  lowJumpMultiplier: 4
+  gravityscale: 3
+  canDash: 1
+  canDoubleJump: 1
+  ProjectilePrefab: {fileID: 0}
+  LaunchOffset: {fileID: 0}
+  numDeaths: 0
+  timeInLevel: 0
+  colors: 000000000100000002000000
   rb: {fileID: 4243714345622679826}
   groundCheck: {fileID: 1843240854818755486}
   Ground:
