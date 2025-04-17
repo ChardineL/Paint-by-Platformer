@@ -14018,6 +14018,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1793169991}
   vec: {x: 0, y: 0, z: -5}
+  newFoV: 0
+  speed: 0
 --- !u!1 &1898719754
 GameObject:
   m_ObjectHideFlags: 0
