@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
@@ -13,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public float fallMultiplier=4f; 
     public float lowJumpMultiplier=4f;
     public float gravityscale=3f;
+    private AudioSource dashAudio;
     private bool isFacingRight = true;
 
     public bool canDash = false;
@@ -47,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
         numDeaths = -1;
         timeInLevel = 0;
         canDash = PlayerPrefs.GetInt("DashUnlocked", 0) == 1;
+        dashAudio = GetComponent<AudioSource>();
     }
 
     public bool FacingRight()
@@ -80,6 +83,7 @@ public class PlayerMovement : MonoBehaviour
         if (Gamepad.current != null)
         {
             horizontal = Gamepad.current.leftStick.x.ReadValue();
+            if (math.abs(horizontal) < 0.1f) horizontal = 0;
         }
         else
         {
@@ -219,6 +223,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private IEnumerator Dash()
     {
+        dashAudio.Play();
         canDash = false;
         isDashing = true;
         animator.SetBool("Dash", true);
