@@ -11616,22 +11616,6 @@ PrefabInstance:
       propertyPath: ProjectilePrefab
       value: 
       objectReference: {fileID: 1893325870326368750, guid: 1c53defd84800714f8e4b41c21c533dc, type: 3}
-    - target: {fileID: 3170072525435020205, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}
-      propertyPath: m_Size.x
-      value: 6.17
-      objectReference: {fileID: 0}
-    - target: {fileID: 3170072525435020205, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}
-      propertyPath: m_Size.y
-      value: 11.33
-      objectReference: {fileID: 0}
-    - target: {fileID: 3170072525435020205, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -6695834746055387555, guid: fad1b3a8ea367b64eb29058b268825a8, type: 3}
-    - target: {fileID: 3170072525435020205, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3831962834180329889, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}
       propertyPath: m_Name
       value: Goob_0
@@ -11684,8 +11668,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3170072525435020205, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5132522283704621209, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}

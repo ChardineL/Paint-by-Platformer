@@ -154,7 +154,6 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetFloat("Vertical", 1);
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpingPower * 0.6f);
-            animator.SetTrigger("DubJump");
             canDoubleJump = false;
         }
 
