@@ -4177,9 +4177,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d180b932194e5a646af889bdc8580d4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panel: {fileID: 0}
-  pauseMenu: {fileID: 0}
-  firstPauseButton: {fileID: 0}
+  panel: {fileID: 843446269}
+  pauseMenu: {fileID: 1163286885}
+  firstPauseButton: {fileID: 1018442439}
   playerInput: {fileID: 0}
 --- !u!4 &345485671
 Transform:
@@ -6584,6 +6584,7 @@ GameObject:
   - component: {fileID: 756650554}
   - component: {fileID: 756650553}
   - component: {fileID: 756650555}
+  - component: {fileID: 756650556}
   m_Layer: 0
   m_Name: DoubleJumpStar
   m_TagString: Untagged
@@ -6707,6 +6708,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.8125, y: 0.8125}
   m_EdgeRadius: 0
+--- !u!114 &756650556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 756650552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dd7e4f858ba01a40b88d8ed27ecab0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popupPanel: {fileID: 843446269}
+  selectedButton: {fileID: 1257002117}
 --- !u!1 &766515392
 GameObject:
   m_ObjectHideFlags: 0
