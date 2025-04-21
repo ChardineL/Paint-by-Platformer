@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using System.Collections;
 
 public class Menus : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class Menus : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject firstPauseButton;
     public static bool isPaused;
+
+    public PlayerInput playerInput;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,43 +21,64 @@ public class Menus : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape) || Gamepad.current.startButton.wasPressedThisFrame){
- 
-            if (isPaused){
+        if (Input.GetKeyDown(KeyCode.Escape) || Gamepad.current.startButton.wasPressedThisFrame)
+        {
+
+            if (isPaused)
+            {
                 ResumeGame();
             }
-            else{
+            else
+            {
                 PauseGame();
             }
 
         }
-        if(panel.activeInHierarchy && isPaused){
+        /*if(panel.activeInHierarchy && isPaused){
             PressContinue();
-        }
+        }*/
     }
-    public void PressContinue(){
+    public void PressContinue()
+    {
         panel.SetActive(false);
-        isPaused=false;
-    }
-    public void PauseGame(){
-        pauseMenu.SetActive(true);
-        Time.timeScale=0f; //stops in game clock
-        isPaused=true;
-        EventSystem.current.SetSelectedGameObject(null); // Clear previous selection
-        EventSystem.current.SetSelectedGameObject(firstPauseButton); 
-    }
-    public void ResumeGame(){
-        pauseMenu.SetActive(false);
-        Time.timeScale=1f;
-        isPaused=false;
-    }
-     public void GoToMainMenu(){
-        Time.timeScale=1f;
-        SceneManager.LoadScene("MainMenu");
-        isPaused=false;
+        Time.timeScale = 1f;
+        isPaused = false;
+
+        playerInput.SwitchCurrentActionMap("Player");
     }
 
-    public void QuitGame(){
+    public void PauseGame()
+    {
+        pauseMenu.SetActive(true);
+        Time.timeScale = 0f; //stops in game clock
+        isPaused = true;
+
+        playerInput.SwitchCurrentActionMap("UI");
+        Debug.Log("Switched to UI action map");
+        playerInput.enabled = false;
+
+        EventSystem.current.SetSelectedGameObject(null); // Clear previous selection
+        EventSystem.current.SetSelectedGameObject(firstPauseButton);
+    }
+    public void ResumeGame()
+    {
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1f;
+        playerInput.enabled = true;
+        playerInput.SwitchCurrentActionMap("Player");
+        isPaused = false;
+
+        
+    }
+    public void GoToMainMenu()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("MainMenu");
+        isPaused = false;
+    }
+
+    public void QuitGame()
+    {
         Application.Quit();
     }
 }

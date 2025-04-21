@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 
+
 public class PlayerMovement : MonoBehaviour
 {
     public Animator animator;
@@ -42,17 +43,26 @@ public class PlayerMovement : MonoBehaviour
     private float checkpointX;
     private float checkpointY;
     Vector2 checkpointpos;
-    public float newSize = 7f; // Target size for zoom out
-    public float zoomDuration = 1f; // Time in seconds to complete the zoom
+    public float zoomOutSize = 10f;
+    public float zoomInSize = 5f;
+    public float zoomDuration = 1f;
 
-    private bool isZooming = false;
+    private Coroutine currentZoomCoroutine;
+
+    //private bool isZooming = false;
+    private PlayerInput playerInput;
+
+    void Awake()
+    {
+        playerInput = GetComponent<PlayerInput>();
+    }
     private void Start()
     {
         checkpointpos = this.transform.position;
         isDead = true;
         numDeaths = -1;
         timeInLevel = 0;
-        canDash = PlayerPrefs.GetInt("DashUnlocked", 0) == 1;
+        canDash = true;//PlayerPrefs.GetInt("DashUnlocked", 0) == 1;
         dashAudio = GetComponent<AudioSource>();
     }
 
@@ -65,6 +75,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if (Menus.isPaused)
+            return;
+
         DeathManager.AddTime(Time.deltaTime);
         if (isDead)
         {
@@ -124,20 +137,20 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("Grounded", true);
             canDoubleJump = true;
         }
-        if (Input.anyKeyDown)
+        /*if (Input.anyKeyDown)
         {
             Debug.Log(Input.GetKeyDown(KeyCode.Space));
             Debug.Log("grounded: " + IsGrounded());
-        }
-        if ((Input.GetKeyDown(KeyCode.Space) || (Gamepad.current != null && Gamepad.current.aButton.wasPressedThisFrame))
+        }*/
+        if (!Menus.isPaused &&(Input.GetKeyDown(KeyCode.Space) || (Gamepad.current != null && Gamepad.current.aButton.wasPressedThisFrame))
          && IsGrounded())
         {
             //Debug.Log(timeInLevel);
-            Debug.Log(DeathManager.getDeaths());
+            Debug.Log("Menu: "+ Menus.isPaused);
             animator.SetFloat("Vertical", 1);
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpingPower * 0.6f);
         }
-        else if (((Input.GetKeyDown(KeyCode.Space) || Gamepad.current != null && Gamepad.current.aButton.wasPressedThisFrame)) && canDoubleJump == true)
+        else if (!Menus.isPaused &&((Input.GetKeyDown(KeyCode.Space) || Gamepad.current != null && Gamepad.current.aButton.wasPressedThisFrame)) && canDoubleJump == true)
         {
             animator.SetFloat("Vertical", 1);
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpingPower * 0.6f);
@@ -262,30 +275,46 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("ZoomOut") && !isZooming)
+        if (collision.CompareTag("ZoomOut"))
         {
-            StartCoroutine(ZoomOutCoroutine());
+            StartZoom(zoomOutSize); // Zoom out on enter
         }
     }
 
-    private IEnumerator ZoomOutCoroutine()
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        isZooming = true;
+        if (collision.CompareTag("ZoomOut"))
+        {
+            StartZoom(zoomInSize); // Zoom back in on exit
+        }
+    }
+
+    private void StartZoom(float targetSize)
+    {
+        if (currentZoomCoroutine != null)
+        {
+            StopCoroutine(currentZoomCoroutine);
+        }
+
+        currentZoomCoroutine = StartCoroutine(ZoomCoroutine(targetSize));
+    }
+
+    private IEnumerator ZoomCoroutine(float targetSize)
+    {
         float startSize = Camera.main.orthographicSize;
         float elapsed = 0f;
 
         while (elapsed < zoomDuration)
         {
             elapsed += Time.deltaTime;
-            Camera.main.orthographicSize = Mathf.Lerp(startSize, newSize, elapsed / zoomDuration);
+            Camera.main.orthographicSize = Mathf.Lerp(startSize, targetSize, elapsed / zoomDuration);
             yield return null;
         }
 
-        Camera.main.orthographicSize = newSize;
-        isZooming = false;
+        Camera.main.orthographicSize = targetSize;
+        currentZoomCoroutine = null;
     }
 
 }

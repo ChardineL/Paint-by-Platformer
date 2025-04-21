@@ -11605,6 +11605,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1577232426460302854, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}
+      propertyPath: zoomOutSize
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1577232426460302854, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}
       propertyPath: LaunchOffset
       value: 
       objectReference: {fileID: 1330726397}
@@ -14169,8 +14173,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 339357987}
   vec: {x: 0, y: 0, z: -5}
-  newFoV: 100
-  speed: 1
 --- !u!114 &1045677142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14572,7 +14574,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 3.0003805}
+  m_Offset: {x: 3.1877604, y: 3.0003805}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -14582,7 +14584,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 8.391366}
+  m_Size: {x: 7.3755207, y: 8.391366}
   m_EdgeRadius: 0
 --- !u!4 &1443046074
 Transform:
