@@ -11,15 +11,15 @@ public class PlayerMovement : MonoBehaviour
     private float vertical;
     public float speed = 6f;
     public float jumpingPower = 25f; //12f;
-    public float fallMultiplier=4f; 
-    public float lowJumpMultiplier=4f;
-    public float gravityscale=3f;
+    public float fallMultiplier = 4f;
+    public float lowJumpMultiplier = 4f;
+    public float gravityscale = 3f;
     private AudioSource dashAudio;
     private bool isFacingRight = true;
 
     public bool canDash = false;
     private bool isDead = false;
-    public bool canDoubleJump = true; 
+    public bool canDoubleJump = true;
     private bool isDashing;
     private float dashingPower = 25f;
     private float dashingTime = 0.2f;
@@ -42,6 +42,10 @@ public class PlayerMovement : MonoBehaviour
     private float checkpointX;
     private float checkpointY;
     Vector2 checkpointpos;
+    public float newSize = 7f; // Target size for zoom out
+    public float zoomDuration = 1f; // Time in seconds to complete the zoom
+
+    private bool isZooming = false;
     private void Start()
     {
         checkpointpos = this.transform.position;
@@ -75,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //checking if he's fallen too far from checkpoint (dead)
-        if(this.transform.position.y < checkpointY - 100)
+        if (this.transform.position.y < checkpointY - 100)
         {
             isDead = true;
         }
@@ -93,33 +97,39 @@ public class PlayerMovement : MonoBehaviour
         float vertical = rb.linearVelocity.y;
 
         // Animation If statemetns
-        if (horizontal != 0 && IsGrounded()){ //Plays walk animation if player is moving on the ground
+        if (horizontal != 0 && IsGrounded())
+        { //Plays walk animation if player is moving on the ground
             animator.SetFloat("Speed", 1);
             animator.SetBool("Grounded", true);
         }
-        else if(horizontal == 0 && vertical == 0){ //Turns off walk animation if player is idle
+        else if (horizontal == 0 && vertical == 0)
+        { //Turns off walk animation if player is idle
             animator.SetFloat("Speed", 0);
             animator.SetBool("Grounded", true);
         }
 
-        if (vertical > 0.01f && !IsGrounded()){ //Plays jump animation if player is moving upwards
+        if (vertical > 0.01f && !IsGrounded())
+        { //Plays jump animation if player is moving upwards
             animator.SetFloat("Vertical", 1);
             animator.SetBool("Grounded", false);
         }
-        else if(vertical < -0.01f && !IsGrounded()) { //Plays fall animation if player is moving downwards
+        else if (vertical < -0.01f && !IsGrounded())
+        { //Plays fall animation if player is moving downwards
             animator.SetFloat("Vertical", -1);
             animator.SetBool("Grounded", false);
         }
-        else if(IsGrounded()){ //Turns off jump animation if player isn't moving vertically
+        else if (IsGrounded())
+        { //Turns off jump animation if player isn't moving vertically
             animator.SetFloat("Vertical", 0);
             animator.SetBool("Grounded", true);
             canDoubleJump = true;
         }
-        if(Input.anyKeyDown){
+        if (Input.anyKeyDown)
+        {
             Debug.Log(Input.GetKeyDown(KeyCode.Space));
-            Debug.Log("grounded: "+IsGrounded());
+            Debug.Log("grounded: " + IsGrounded());
         }
-        if ((Input.GetKeyDown(KeyCode.Space) || (Gamepad.current!=null && Gamepad.current.aButton.wasPressedThisFrame))
+        if ((Input.GetKeyDown(KeyCode.Space) || (Gamepad.current != null && Gamepad.current.aButton.wasPressedThisFrame))
          && IsGrounded())
         {
             //Debug.Log(timeInLevel);
@@ -127,7 +137,7 @@ public class PlayerMovement : MonoBehaviour
             animator.SetFloat("Vertical", 1);
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpingPower * 0.6f);
         }
-        else if(((Input.GetKeyDown(KeyCode.Space) || Gamepad.current!=null && Gamepad.current.aButton.wasPressedThisFrame)) && canDoubleJump == true)
+        else if (((Input.GetKeyDown(KeyCode.Space) || Gamepad.current != null && Gamepad.current.aButton.wasPressedThisFrame)) && canDoubleJump == true)
         {
             animator.SetFloat("Vertical", 1);
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpingPower * 0.6f);
@@ -146,25 +156,25 @@ public class PlayerMovement : MonoBehaviour
             StartCoroutine(Dash());
         }
         //gravity when falling
-        if (rb.linearVelocityY < 0) 
+        if (rb.linearVelocityY < 0)
         {
             rb.gravityScale = fallMultiplier; // Increase gravity when falling
-        } 
-        else if (rb.linearVelocityY > 0 && (Input.GetKey(KeyCode.Space)|| (Gamepad.current != null && Gamepad.current.aButton.isPressed))) 
+        }
+        else if (rb.linearVelocityY > 0 && (Input.GetKey(KeyCode.Space) || (Gamepad.current != null && Gamepad.current.aButton.isPressed)))
         {
             //rb.linearVelocityY=0;
             rb.gravityScale = lowJumpMultiplier; // Reduce jump height if key is released
         }
-        else 
+        else
         {
-            rb.gravityScale =gravityscale; //2f; // Default gravity when grounded
+            rb.gravityScale = gravityscale; //2f; // Default gravity when grounded
         }
 
-        if(Gamepad.current.xButton.wasPressedThisFrame)
+        if (Gamepad.current.xButton.wasPressedThisFrame)
         {
             Instantiate(ProjectilePrefab, LaunchOffset.position, transform.rotation);
         }
-        if(Gamepad.current.rightShoulder.wasPressedThisFrame)
+        if (Gamepad.current.rightShoulder.wasPressedThisFrame)
         {
             previousColor = currentColor;
             if (currentColor == 0) currentColor = 1;
@@ -188,7 +198,7 @@ public class PlayerMovement : MonoBehaviour
         {
             return;
         }
-    
+
         rb.linearVelocity = new Vector2(horizontal * speed, rb.linearVelocity.y);
     }
 
@@ -199,17 +209,18 @@ public class PlayerMovement : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         //Debug.Log(collision.gameObject.CompareTag("Spikes"));
-        if(collision.gameObject.CompareTag("Spikes") || collision.gameObject.CompareTag("Enemy")){
-            
-            isDead=true;
+        if (collision.gameObject.CompareTag("Spikes") || collision.gameObject.CompareTag("Enemy"))
+        {
+
+            isDead = true;
         }
-        
+
     }
 
-    
+
     private void Flip()
     {
-        
+
         if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
         {
             //Vector3 localScale = transform.localScale;
@@ -218,8 +229,8 @@ public class PlayerMovement : MonoBehaviour
             //transform.localScale = localScale;
             transform.Rotate(0f, 180f, 0f);
         }
-        
-        
+
+
     }
     private IEnumerator Dash()
     {
@@ -248,6 +259,33 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool("Dash", false);
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
-        
+
     }
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("ZoomOut") && !isZooming)
+        {
+            StartCoroutine(ZoomOutCoroutine());
+        }
+    }
+
+    private IEnumerator ZoomOutCoroutine()
+    {
+        isZooming = true;
+        float startSize = Camera.main.orthographicSize;
+        float elapsed = 0f;
+
+        while (elapsed < zoomDuration)
+        {
+            elapsed += Time.deltaTime;
+            Camera.main.orthographicSize = Mathf.Lerp(startSize, newSize, elapsed / zoomDuration);
+            yield return null;
+        }
+
+        Camera.main.orthographicSize = newSize;
+        isZooming = false;
+    }
+
 }
