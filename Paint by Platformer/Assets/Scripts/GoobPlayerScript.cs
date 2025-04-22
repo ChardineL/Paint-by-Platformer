@@ -149,7 +149,7 @@ public class PlayerMovement : MonoBehaviour
          && IsGrounded())
         {
             //Debug.Log(timeInLevel);
-            Debug.Log("Menu: "+ Menus.isPaused);
+            //Debug.Log("Menu: "+ Menus.isPaused);
             animator.SetFloat("Vertical", 1);
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpingPower * 0.6f);
         }
@@ -161,7 +161,7 @@ public class PlayerMovement : MonoBehaviour
             animator.SetTrigger("DubJump");
             canDoubleJump = false;
         }
-        Debug.Log(canDoubleJump + " ==" + PlayerPrefs.GetInt("DoubleJumpUnlocked", 0));
+        //Debug.Log(canDoubleJump + " ==" + PlayerPrefs.GetInt("DoubleJumpUnlocked", 0));
         /*
         if ((Input.GetKeyDown(KeyCode.Space) || (Gamepad.current!=null && Gamepad.current.aButton.wasPressedThisFrame) ) && rb.linearVelocity.y > 0f)
         {
