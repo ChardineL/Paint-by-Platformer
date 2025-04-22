@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isFacingRight = true;
 
     public bool canDash = false;
-    private bool isDead = false;
+    public bool isDead = false;
     public bool canDoubleJump = true;
     private bool isDashing;
     private float dashingPower = 25f;
