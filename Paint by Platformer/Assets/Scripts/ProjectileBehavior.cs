@@ -7,7 +7,6 @@ public class ProjectileBehavior : MonoBehaviour
     public float Speed = 100.0f;
     //public GameObject commander = Commander.Find("Controller");
     
-    public ColorTrack color = GameObject.Find("Color Tracker").GetComponent<ColorTrack>();
     bool right;
 
     private void Start()
