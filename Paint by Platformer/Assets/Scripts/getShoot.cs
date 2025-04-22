@@ -13,7 +13,7 @@ public class getShoot : MonoBehaviour
             PlayerMovement playerScript = player.GetComponent<PlayerMovement>();
             if (playerScript)
             {
-                playerScript.canDash = true;
+                playerScript.canShoot = true;
                 PlayerPrefs.SetInt("ShootUnlocked", 1);
                 Destroy(gameObject);
             }

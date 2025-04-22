@@ -14,7 +14,7 @@ public class GetDoubleJump : MonoBehaviour
             PlayerMovement playerScript = player.GetComponent<PlayerMovement>();
             if (playerScript)
             {
-                playerScript.canDash = true;
+                playerScript.canDoubleJump = true;
                 PlayerPrefs.SetInt("DoubleJumpUnlocked", 1);
                 Destroy(gameObject);
             }

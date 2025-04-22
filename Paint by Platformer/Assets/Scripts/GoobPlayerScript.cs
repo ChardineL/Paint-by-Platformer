@@ -64,9 +64,8 @@ public class PlayerMovement : MonoBehaviour
         numDeaths = -1;
         timeInLevel = 0;
         canDash = PlayerPrefs.GetInt("DashUnlocked", 0) == 1;
-        Debug.Log("dash " + PlayerPrefs.GetInt("DashUnlocked", 0));
         canShoot = PlayerPrefs.GetInt("ShootUnlocked", 0) == 1;
-        canShoot = PlayerPrefs.GetInt("DoubleJumpUnlocked", 0) == 1;
+        canDoubleJump = PlayerPrefs.GetInt("DoubleJumpUnlocked", 0) == 1;
         dashAudio = GetComponent<AudioSource>();
     }
 
@@ -154,6 +153,7 @@ public class PlayerMovement : MonoBehaviour
             animator.SetFloat("Vertical", 1);
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpingPower * 0.6f);
         }
+        
         else if (!Menus.isPaused &&((Input.GetKeyDown(KeyCode.Space) || Gamepad.current != null && Gamepad.current.aButton.wasPressedThisFrame)) && canDoubleJump == true)
         {
             animator.SetFloat("Vertical", 1);
@@ -161,7 +161,7 @@ public class PlayerMovement : MonoBehaviour
             animator.SetTrigger("DubJump");
             canDoubleJump = false;
         }
-
+        Debug.Log(canDoubleJump + " ==" + PlayerPrefs.GetInt("DoubleJumpUnlocked", 0));
         /*
         if ((Input.GetKeyDown(KeyCode.Space) || (Gamepad.current!=null && Gamepad.current.aButton.wasPressedThisFrame) ) && rb.linearVelocity.y > 0f)
         {
