@@ -5100,7 +5100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d180b932194e5a646af889bdc8580d4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panel: {fileID: 0}
+  panel: {fileID: 2130458451}
   pauseMenu: {fileID: 1941378001}
   firstPauseButton: {fileID: 1100818647}
   playerInput: {fileID: 0}
