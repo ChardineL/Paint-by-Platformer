@@ -6590,8 +6590,8 @@ GameObject:
   - component: {fileID: 756650554}
   - component: {fileID: 756650553}
   - component: {fileID: 756650555}
-  - component: {fileID: 756650556}
   - component: {fileID: 756650557}
+  - component: {fileID: 756650558}
   m_Layer: 0
   m_Name: DoubleJumpStar
   m_TagString: Untagged
@@ -6715,20 +6715,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.8125, y: 0.8125}
   m_EdgeRadius: 0
---- !u!114 &756650556
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 756650552}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1dd7e4f858ba01a40b88d8ed27ecab0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  popupPanel: {fileID: 2130458451}
-  selectedButton: {fileID: 2053968737}
 --- !u!95 &756650557
 Animator:
   serializedVersion: 7
@@ -6751,6 +6737,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &756650558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 756650552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4df8fcdade03a7740952c9b005a21bf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popupPanel: {fileID: 2130458451}
+  selectedButton: {fileID: 2053968737}
 --- !u!1 &765047437
 GameObject:
   m_ObjectHideFlags: 0
@@ -7474,11 +7474,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5132522283704621209, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.1
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 5132522283704621209, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.4
+      value: -0.7
       objectReference: {fileID: 0}
     - target: {fileID: 5132522283704621209, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}
       propertyPath: m_LocalPosition.z
