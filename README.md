@@ -1,5 +1,7 @@
 README
 
+Github: https://github.com/ChardineL/Paint-by-Platformer/tree/main
+
 Paint by Platformer is a 2D platformer game where you play as Goob, a painter, as he seeks to restore color to a fading world.
 
 ***Controller required***
