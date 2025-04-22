@@ -5103,7 +5103,6 @@ MonoBehaviour:
   panel: {fileID: 2130458451}
   pauseMenu: {fileID: 1941378001}
   firstPauseButton: {fileID: 1100818647}
-  playerInput: {fileID: 0}
 --- !u!114 &547732057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6708,7 +6707,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.13, y: 0.13}
+    oldSize: {x: 0.8125, y: 0.8125}
     newSize: {x: 0.8125, y: 0.8125}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -7475,11 +7474,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5132522283704621209, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.14
+      value: 124.4
       objectReference: {fileID: 0}
     - target: {fileID: 5132522283704621209, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.86
+      value: -43.2
       objectReference: {fileID: 0}
     - target: {fileID: 5132522283704621209, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}
       propertyPath: m_LocalPosition.z
@@ -76185,7 +76184,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1941378002
 RectTransform:
   m_ObjectHideFlags: 0
@@ -76312,7 +76311,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -55, y: -21}
+  m_AnchoredPosition: {x: -135, y: -2.7}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1959023560
@@ -76335,7 +76334,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press RT to double jump
+  m_text: Press A twice to double jump
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -76369,7 +76368,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -76400,7 +76399,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -148.70851, w: 0}
+  m_margin: {x: -40.619926, y: 0, z: -306.27805, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -76881,7 +76880,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1686636711860274181, guid: b20f07bc41ffa514990637e65d5e6eaf, type: 3}
+      - m_Target: {fileID: 547732056}
         m_TargetAssemblyTypeName: Menus, Assembly-CSharp
         m_MethodName: PressContinue
         m_Mode: 1
@@ -77381,7 +77380,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9838735, g: 0.9858491, b: 0.5812789, a: 0.392}
+  m_Color: {r: 0.5803922, g: 0.9843137, b: 0.965784, a: 0.392}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
