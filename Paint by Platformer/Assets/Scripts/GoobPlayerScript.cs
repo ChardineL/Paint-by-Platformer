@@ -64,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
         numDeaths = -1;
         timeInLevel = 0;
         canDash = PlayerPrefs.GetInt("DashUnlocked", 0) == 1;
+        Debug.Log("dash " + PlayerPrefs.GetInt("DashUnlocked", 0));
         canShoot = PlayerPrefs.GetInt("ShootUnlocked", 0) == 1;
         canShoot = PlayerPrefs.GetInt("DoubleJumpUnlocked", 0) == 1;
         dashAudio = GetComponent<AudioSource>();
@@ -167,7 +168,7 @@ public class PlayerMovement : MonoBehaviour
             //rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.5f);
         }
         */
-
+        
         if (Gamepad.current.rightTrigger.wasPressedThisFrame && canDash)
         {
             StartCoroutine(Dash());
