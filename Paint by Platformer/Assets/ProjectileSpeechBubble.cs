@@ -6,6 +6,7 @@ public class ProjectileSpeechBubble : MonoBehaviour
      public GameObject[] speechBubbles;
     private int currentIndex = 0;
     private bool playerInside = false;
+    //public GameObject panel;
 
     void Start()
     {
@@ -29,7 +30,7 @@ public class ProjectileSpeechBubble : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInside = true;
-            currentIndex = 0;
+            //currentIndex = 0;
             if (speechBubbles.Length > 0)
             {
                 speechBubbles[currentIndex].SetActive(true);
@@ -61,5 +62,8 @@ public class ProjectileSpeechBubble : MonoBehaviour
 
         // Show next
         speechBubbles[currentIndex].SetActive(true);
+        if(currentIndex==2){
+            //panel.SetActive(true);
+        }
     }
 }

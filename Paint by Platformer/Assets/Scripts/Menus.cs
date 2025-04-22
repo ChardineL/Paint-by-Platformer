@@ -11,7 +11,7 @@ public class Menus : MonoBehaviour
     public GameObject firstPauseButton;
     public static bool isPaused;
 
-    public PlayerInput playerInput;
+    // public PlayerInput playerInput;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -44,18 +44,20 @@ public class Menus : MonoBehaviour
         Time.timeScale = 1f;
         isPaused = false;
 
-        playerInput.SwitchCurrentActionMap("Player");
+        // playerInput.SwitchCurrentActionMap("Player");
     }
 
     public void PauseGame()
     {
+        if (pauseMenu == null) Debug.LogError("PauseMenu is not assigned!");
+        Debug.Log(pauseMenu.activeInHierarchy);
         pauseMenu.SetActive(true);
         Time.timeScale = 0f; //stops in game clock
         isPaused = true;
 
-        playerInput.SwitchCurrentActionMap("UI");
-        Debug.Log("Switched to UI action map");
-        playerInput.enabled = false;
+        // playerInput.SwitchCurrentActionMap("UI");
+        // Debug.Log("Switched to UI action map");
+        // playerInput.enabled = false;
 
         EventSystem.current.SetSelectedGameObject(null); // Clear previous selection
         EventSystem.current.SetSelectedGameObject(firstPauseButton);
@@ -64,8 +66,8 @@ public class Menus : MonoBehaviour
     {
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
-        playerInput.enabled = true;
-        playerInput.SwitchCurrentActionMap("Player");
+        // playerInput.enabled = true;
+        // playerInput.SwitchCurrentActionMap("Player");
         isPaused = false;
 
         

@@ -28,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] public ProjectileBehavior ProjectilePrefab;
     [SerializeField] public Transform LaunchOffset;
+    public bool canShoot=false;
 
     public int numDeaths;
     public float timeInLevel;
@@ -62,7 +63,9 @@ public class PlayerMovement : MonoBehaviour
         isDead = true;
         numDeaths = -1;
         timeInLevel = 0;
-        canDash = true;//PlayerPrefs.GetInt("DashUnlocked", 0) == 1;
+        canDash = PlayerPrefs.GetInt("DashUnlocked", 0) == 1;
+        canShoot = PlayerPrefs.GetInt("ShootUnlocked", 0) == 1;
+        canShoot = PlayerPrefs.GetInt("DoubleJumpUnlocked", 0) == 1;
         dashAudio = GetComponent<AudioSource>();
     }
 
@@ -184,7 +187,7 @@ public class PlayerMovement : MonoBehaviour
             rb.gravityScale = gravityscale; //2f; // Default gravity when grounded
         }
 
-        if (Gamepad.current.xButton.wasPressedThisFrame)
+        if (canShoot && Gamepad.current.xButton.wasPressedThisFrame)
         {
             Instantiate(ProjectilePrefab, LaunchOffset.position, transform.rotation);
         }
