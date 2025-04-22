@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
 
     public bool canDash = false;
     public bool isDead = false;
-    public bool canDoubleJump = true;
+    public bool canDoubleJump = false;
     private bool isDashing;
     private float dashingPower = 25f;
     private float dashingTime = 0.2f;
@@ -138,7 +138,7 @@ public class PlayerMovement : MonoBehaviour
         { //Turns off jump animation if player isn't moving vertically
             animator.SetFloat("Vertical", 0);
             animator.SetBool("Grounded", true);
-            canDoubleJump = true;
+            //canDoubleJump = true;
         }
         /*if (Input.anyKeyDown)
         {

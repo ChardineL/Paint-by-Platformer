@@ -172,7 +172,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      GoobDubJump3_0: -1561533429733516399
+      GoobDubJump3_1: 6337366527336802894
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
