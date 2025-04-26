@@ -134,11 +134,11 @@ public class PlayerMovement : MonoBehaviour
             animator.SetFloat("Vertical", -1);
             animator.SetBool("Grounded", false);
         }
-        else if (IsGrounded())
+        else if (IsGrounded() && PlayerPrefs.GetInt("DoubleJumpUnlocked", 0) == 1)
         { //Turns off jump animation if player isn't moving vertically
             animator.SetFloat("Vertical", 0);
             animator.SetBool("Grounded", true);
-            //canDoubleJump = true;
+            canDoubleJump = true;
         }
         /*if (Input.anyKeyDown)
         {
