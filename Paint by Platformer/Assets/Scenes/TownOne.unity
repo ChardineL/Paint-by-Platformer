@@ -11317,7 +11317,6 @@ MonoBehaviour:
   panel: {fileID: 21759045}
   pauseMenu: {fileID: 1689835703}
   firstPauseButton: {fileID: 1156192786}
-  playerInput: {fileID: 0}
 --- !u!4 &1805735844
 Transform:
   m_ObjectHideFlags: 0
@@ -13085,7 +13084,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3170072525435020205, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}
       propertyPath: m_SortingOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3831962834180329889, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}
       propertyPath: m_Name
@@ -13117,7 +13116,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5132522283704621209, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.11
+      value: -2.024
       objectReference: {fileID: 0}
     - target: {fileID: 5132522283704621209, guid: 1f0f8cfa266dea54988ad3430299af43, type: 3}
       propertyPath: m_LocalPosition.z
